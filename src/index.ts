@@ -171,9 +171,8 @@ class UsersData {
         typeof newUserData.name === "string" &&
         newUserData.name.length > 0
       ) {
-        this.data = this.data.map((user) =>
-          user.name === userEdit ? { ...user, ...newUserData } : user
-        );
+        this.data[userIndex].name = newUserData.name;
+        this.data[userIndex].age = newUserData.age;
 
         Message.showColorized(MessageVariant.Success, "User updated");
       } else {
